@@ -32,3 +32,18 @@ export async function cadastrarUsuario(nome, email, senha) {
     throw error;
   }
 }
+
+// Acessar o login
+export async function loginUsuario(email, senha) {
+  try {
+    await signInWithEmailAndPassword(auth, email, senha);
+  } catch (error) {
+    toast.error(error.message);
+    throw error;
+  }
+}
+
+// Sair do login
+export async function logout() {
+  await signOut(auth);
+}
