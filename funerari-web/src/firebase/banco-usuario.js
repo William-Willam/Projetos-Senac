@@ -14,14 +14,14 @@ import {
   import toast from "react-hot-toast";
 
   //Banco de Dados Usuários
-  const usuarioCol = collection(db, "usuarioComum");
+  const usuarioCol = collection(db, "usuario");
 
-  //C.R.U.D(usuario)
+  //C.R.U.D
 
   // Criar usuario
-  export async function adicionarUsuario({uid, nome, cpf, email}) {
+  export async function adicionarUsuario({uid, nome, email}) {
     try {
-        await addDoc(usuarioCol,{uid,nome, cpf, email, criadoEm: new Date()});
+        await addDoc(usuarioCol,{uid,nome, email, criadoEm: new Date()});
         toast.success("Dados do usuário salvos com sucesso!");
     } catch (error) {
         console.error("Erro ao salvar dados do usuário:", error);

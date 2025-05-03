@@ -1,11 +1,12 @@
-function App() {
-  
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
 
+
+function App() {
   return (
-    <>
-    <h1>Em construção aguarde!</h1>
-    <p>!!!</p>
-    </>
+    <BrowserRouter>
+    <Header/>
+    </BrowserRouter>
   )
 }
 

@@ -1,0 +1,54 @@
+/* RESET BASELINE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Remove estilos padrão de links, listas etc */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  
+  /* Garantir que imagens não estourem */
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Definições globais */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #1c1c1c;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  /* Container utilitário opcional */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
