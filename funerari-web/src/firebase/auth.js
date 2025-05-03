@@ -15,7 +15,8 @@ import {
 import { auth } from "./config";
 import toast from "react-hot-toast";
 
-export async function cadastrarUsurio(nome, email, senha) {
+//Dados para implementar no FireStore Database
+export async function cadastrarUsuario(nome, email, senha) {
   try {
     const { user } = await createUserWithEmailAndPassword(auth, email, senha);
     await updateProfile(user, { displayName: nome });
