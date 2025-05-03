@@ -1,12 +1,67 @@
-# React + Vite
+# Sistema de Gestão de Funerária
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
 
-Currently, two official plugins are available:
+Este projeto é uma aplicação web para uma funerária, desenvolvida utilizando **React (Vite)**, **Node.js** e **Firebase**. O sistema tem como objetivo fornecer uma plataforma para gerenciar informações de produtos, interações com clientes e facilitar a comunicação via WhatsApp. A aplicação inclui funcionalidades de autenticação, cadastro de produtos, painel administrativo e uma página de contato integrada com o Formspree.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- **Landing Page**: Página inicial com informações sobre a funerária.
+- **Login e Cadastro**: Sistema de autenticação com Firebase.
+- **Catálogo de Produtos**: Exibição de produtos da funerária, como caixões.
+- **Painel Administrativo**: Interface para gerenciar produtos e informações da funerária.
+- **Página de Contato**: Formulário de contato com categorias, integração com Formspree e botão para contato via WhatsApp.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias Utilizadas
+
+- **Frontend**: 
+  - React (Vite)
+  - CSS para estilização
+- **Backend**:
+  - Node.js (para integrações futuras, se necessário)
+  - Firebase (para autenticação e banco de dados)
+- **Integrações**:
+  - Formspree (para envio de formulários de contato)
+  - WhatsApp API (para redirecionamento de mensagens)
+
+## Como Rodar o Projeto
+
+### Pré-requisitos
+
+Certifique-se de ter as seguintes ferramentas instaladas:
+
+- [Node.js](https://nodejs.org/) (versão 14 ou superior)
+- [Firebase CLI](https://firebase.google.com/docs/cli) (se for fazer deploy no Firebase)
+
+### Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/projeto-funeraria.git
+   cd projeto-funeraria
+
+2. Instale as dependências do frontend:
+    cd frontend
+    npm install
+
+3. Para rodar o projeto no modo de desenvolvimento:  
+    npm run dev
+
+## Estrutura de Pastas
+/frontend
+  /src
+    /components
+      - Login.jsx
+      - Cadastro.jsx
+      - Catálogo.jsx
+      - PainelAdmin.jsx
+      - Contato.jsx
+    /assets
+      - Imagens, ícones, etc.
+    /styles
+      - Arquivos CSS
+    /Firebase
+        -config.js
+        -auth.js
+        -banco-usuario.js
+  package.json

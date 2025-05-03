@@ -8,12 +8,12 @@ export default function Header() {
         <h1 className="nome-funeraria">Funerária Esperança</h1>
       </section>
       <nav className="nav">
-        <a href="#">Catálogo</a>
+        <a href="/login">Catálogo</a>
         <a href="/contato">Contatos</a>
-        <a href="#" className="login-btn">
+        <a href="/login" className="login-btn">
           Login
         </a>
-        <a href="#" className="signup-btn">
+        <a href="/login" className="signup-btn">
           Cadastrar
         </a>
       </nav>

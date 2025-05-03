@@ -1,0 +1,84 @@
+/* Container principal do login */
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+/* Card */
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+/* Título */
+.login-card h1 {
+  text-align: center;
+  color: #006666;
+  font-size: 24px;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+/* Input */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+/* Botão */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3399aa;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #2b8a99;
+}
+
+/* Rodapé / link alternar */
+.login-footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 14px;
+  color: #666;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #007b8f;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
