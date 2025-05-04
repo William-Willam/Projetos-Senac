@@ -4,7 +4,7 @@
   }
   
   .hero {
-    background: url("/funeraria1.jpg") no-repeat center center/cover;
+    background: url("/funeraria1.jpg?v=1") no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
