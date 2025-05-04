@@ -14,7 +14,7 @@
   gap: 1rem;
 }
 
-.logo {
+.logo img {
   width: 50px;
   height: auto;
   border-radius: 25px;
@@ -23,55 +23,78 @@
 .nome-funeraria {
   font-size: 1.5rem;
   font-weight: bold;
+  color: white;
 }
 
-.nav a {
-  margin-left: 2rem;
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-nav a {
   text-decoration: none;
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.header-nav a:hover {
   color: #ca1a1a;
 }
 
-.login-btn {
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  border: 1px solid white;
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
   background-color: transparent;
   color: white;
+  border: none;
+  cursor: pointer;
   font-weight: 500;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
-.login-btn:hover {
-  background-color: #ffffff;
-  color: #1c1c1c;
-  transform: scale(1.05);
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.signup-btn {
-  padding: 0.4rem 1rem;
-  border-radius: 4px;
-  border: 1px solid #17e432;
-  background-color: transparent;
-  color: #17e432;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-.signup-btn:hover {
-  background-color: #17e432;
-  color: #1c1c1c;
-  transform: scale(1.05);
+.dropdown-content label,
+.dropdown-content a,
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
+.dropdown-content label:hover,
+.dropdown-content a:hover,
+.dropdown-content span:hover {
+  background-color: #ddd;
+}
 
+/* Responsividade */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -80,29 +103,26 @@
   }
 
   .header-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .nav {
-    width: 100%;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     gap: 0.8rem;
   }
 
-  .nav a {
-    margin-left: 0;
-    font-size: 1rem;
+  .nome-funeraria {
+    font-size: 1.3rem;
   }
 
-  .login-btn,
-  .signup-btn {
+  .header-nav {
     width: 100%;
-    text-align: center;
-    padding: 0.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+    gap: 0.8rem;
   }
-  
+
+  .nav-icons {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
 }
