@@ -1,0 +1,66 @@
+.planos-container {
+  padding: 40px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  min-height: 100vh;
+}
+
+.planos-container h2 {
+  color: #00796b;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.planos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.plano-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 260px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.plano-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.plano-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+.plano-card p {
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #555;
+}
+
+.plano-card span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #00796b;
+}
+
+/* Cores dos planos */
+.plano-card.basico {
+  border-color: #81d4fa;
+}
+
+.plano-card.ouro {
+  border-color: #ffca28;
+}
+
+.plano-card.platina {
+  border-color: #ce93d8;
+}
