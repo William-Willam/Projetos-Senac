@@ -1,35 +1,57 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import "../styles/Dashboard.css";
 
 function Dashboard() {
-  const usuario = JSON.parse(localStorage.getItem('usuario'));
-  const [dados, setDados] = useState({ peso: '', altura: '', imc: '', exercicio: '' });
+  const usuario = JSON.parse(localStorage.getItem("usuario"));
+  const [dados, setDados] = useState({
+    peso: "",
+    altura: "",
+    imc: "",
+    exercicio: "",
+  });
 
   const buscarDados = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/usuarios/${usuario.id}/dados`);
+      const res = await axios.get(
+        `http://localhost:5000/api/usuarios/${usuario.id}/dados`
+      );
       if (res.data) setDados(res.data);
     } catch (err) {
-      console.error('Erro ao buscar dados');
+      console.error("Erro ao buscar dados");
     }
   };
 
   const atualizarDados = async () => {
-    const alturaNum = parseFloat(dados.altura);
-    const pesoNum = parseFloat(dados.peso);
-    const imc = alturaNum > 0 ? (pesoNum / (alturaNum * alturaNum)).toFixed(2) : 0;
+    const alturaNum = parseFloat(dados.altura.replace(",", "."));
+    const pesoNum = parseFloat(dados.peso.replace(",", "."));
+    const imc =
+      alturaNum > 0 ? (pesoNum / (alturaNum * alturaNum)).toFixed(2) : 0;
 
     try {
-      await axios.put(`http://localhost:5000/api/usuarios/${usuario.id}/dados`, {
-        ...dados,
-        imc,
-      });
-      alert('Dados atualizados com sucesso!');
+      await axios.put(
+        `http://localhost:5000/api/usuarios/${usuario.id}/dados`,
+        {
+          ...dados,
+          imc,
+        }
+      );
+      alert("Dados atualizados com sucesso!");
       buscarDados();
     } catch (err) {
-      alert('Erro ao atualizar dados');
+      alert("Erro ao atualizar dados");
     }
+  };
+
+  const getClassificacaoIMC = (imc) => {
+    const valor = parseFloat(imc);
+    if (isNaN(valor)) return { texto: "---", cor: "#000" };
+    if (valor < 18.5) return { texto: "Abaixo do peso", cor: "#f39c12" };
+    if (valor < 24.9) return { texto: "Peso ideal", cor: "#27ae60" };
+    if (valor < 29.9) return { texto: "Sobrepeso", cor: "#f1c40f" };
+    if (valor < 34.9) return { texto: "Obesidade grau 1", cor: "#e67e22" };
+    if (valor < 39.9) return { texto: "Obesidade grau 2", cor: "#e74c3c" };
+    return { texto: "Obesidade grau 3", cor: "#c0392b" };
   };
 
   useEffect(() => {
@@ -38,7 +60,20 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h2>Bem-vindo, {usuario.nome}</h2>
+      <div className="dashboard-header">
+        <h2>Bem-vindo, {usuario.nome}</h2>
+        <button
+          className="logout-btn"
+          onClick={() => {
+            localStorage.removeItem("token");
+            localStorage.removeItem("usuario");
+            window.location.href = "/login";
+          }}
+        >
+          Sair
+        </button>
+      </div>
+
       <div className="dados-grid">
         <div className="input-card">
           <label>Peso (kg)</label>
@@ -63,15 +98,31 @@ function Dashboard() {
           <textarea
             placeholder="Descreva seu treino ou atividade"
             value={dados.exercicio}
-            onChange={(e) => setDados({ ...dados, exercicio: e.target.value })}
+            onChange={(e) =>
+              setDados({ ...dados, exercicio: e.target.value })
+            }
           />
         </div>
         <div className="input-card imc-card">
           <label>IMC calculado</label>
-          <div className="imc-valor">{dados.imc || '---'}</div>
+          {dados.imc ? (
+            <div>
+              <div
+                className="imc-valor"
+                style={{ color: getClassificacaoIMC(dados.imc).cor }}
+              >
+                {dados.imc}
+              </div>
+              <div className="imc-texto">{getClassificacaoIMC(dados.imc).texto}</div>
+            </div>
+          ) : (
+            <div className="imc-valor">---</div>
+          )}
         </div>
       </div>
-      <button className="atualizar-btn" onClick={atualizarDados}>Atualizar Dados</button>
+      <button className="atualizar-btn" onClick={atualizarDados}>
+        Atualizar Dados
+      </button>
     </div>
   );
 }
