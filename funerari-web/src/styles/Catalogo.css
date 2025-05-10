@@ -1,99 +1,128 @@
 .catalogo-container {
-    padding: 20px;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f9f9f9;
-    min-height: 100vh;
-  }
-  
-  .catalogo-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-  }
-  
-  .catalogo-header h1 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .btn-sair {
-    background-color: #b30000;
-    color: #fff;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  .btn-sair:hover {
-    background-color: #800000;
-  }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
-  section h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #444;
-  }
-  
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+.catalogo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.catalogo-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn-sair {
+  background-color: #b30000;
+  color: #fff;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-sair:hover {
+  background-color: #800000;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Responsividade: carrossel no mobile */
+@media (max-width: 768px) {
   .catalogo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-  
-  .catalogo-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+
+    /* Rolagem suave */
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
   }
-  
+
+  .catalogo-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .catalogo-card {
+    min-width: 80%;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
   .card-imagem {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 160px;
   }
-  
-  .card-conteudo {
-    padding: 16px;
-  }
-  
-  .card-conteudo h3 {
-    font-size: 18px;
-    margin-bottom: 6px;
-  }
-  
-  .card-conteudo p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .card-conteudo strong {
-    display: block;
-    font-size: 16px;
-    color: #2c7a00;
-    margin-bottom: 10px;
-  }
-  
-  .btn-comprar {
-    background-color: #0077cc;
-    color: white;
-    padding: 8px 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .btn-comprar:hover {
-    background-color: #005fa3;
-  }
-  
+}
+
+.catalogo-card {
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-imagem {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-conteudo {
+  padding: 16px;
+}
+
+.card-conteudo h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.card-conteudo p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-conteudo strong {
+  display: block;
+  font-size: 16px;
+  color: #2c7a00;
+  margin-bottom: 10px;
+}
+
+.btn-comprar {
+  background-color: #0077cc;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-comprar:hover {
+  background-color: #005fa3;
+}

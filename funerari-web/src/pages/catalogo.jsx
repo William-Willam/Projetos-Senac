@@ -1,6 +1,6 @@
 import { logout } from "../firebase/auth";
 import { useNavigate } from "react-router-dom";
-import "../styles/Catalogo.css"; // Importando o CSS exclusivo
+import "../styles/Catalogo.css";
 
 export default function Catalogo() {
   const navigate = useNavigate();
