@@ -19,8 +19,8 @@ app.use(express.json());
 app.use("/api", routes);
 
 // Middleware global para tratamento de erros (opcional)
-// const errorHandler = require("./middleware/errorHandler");
-// app.use(errorHandler);
+const errorHandler = require("./middleware/errorHandler");
+app.use(errorHandler);
 
 // Define a porta do servidor (usa a variável de ambiente ou 5000 como padrão)
 const PORT = process.env.PORT || 5000;
