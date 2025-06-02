@@ -38,7 +38,8 @@ CREATE TABLE tarefas (
   FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
-
+select * from projetos;
+select * from tarefas;
 
 
 
