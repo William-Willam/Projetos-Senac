@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 // Importa os controllers
-const usuarioController = require("../controllers/usuarioController");
 const projetoController = require("../controllers/projetoController");
 const tarefaController = require("../controllers/tarefasController");
+const usuarioController = require("../controllers/usuarioController");
 
 // Importa os middlewares
 const auth = require("../middleware/auth"); // Middleware de autenticação JWT
