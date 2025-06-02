@@ -1,0 +1,32 @@
+# BACKEND
+/backend/node_modules/
+backend/.env
+backend/*.log
+backend/dist/
+backend/**/*.tsbuildinfo
+
+# FRONTEND
+/frontend/node_modules/
+frontend/.env
+frontend/build/
+frontend/dist/
+
+# BANCO DE DADOS
+*.sql
+*.sql.gz
+*.dump
+
+# GERAL
+node_modules/
+.env
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+*.swp
+*.swo
