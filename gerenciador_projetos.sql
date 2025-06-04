@@ -40,6 +40,7 @@ CREATE TABLE tarefas (
 
 select * from projetos;
 select * from tarefas;
+select * from usuarios;
 
 
 
