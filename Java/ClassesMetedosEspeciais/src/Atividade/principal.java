@@ -8,7 +8,8 @@ public class principal {
 		
 		//exibir dados
 		livro1.exibirInformacao();
-	    
+		livro1.SetAno(1955);
+	    livro1.exibirInformacao();
 	}
 
 }

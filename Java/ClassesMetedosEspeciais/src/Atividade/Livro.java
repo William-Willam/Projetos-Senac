@@ -15,11 +15,12 @@ public class Livro {
 	}
 
 	// Getters e Setters
-	public void SetAno() {
+	public void SetAno(int ano) {
+		this.ano = ano;
 	}
 	
 	public int GetAno() {
-		
+		return ano;
 	}
 
 	public void exibirInformacao() {
