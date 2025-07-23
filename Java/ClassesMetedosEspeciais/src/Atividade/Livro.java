@@ -15,14 +15,39 @@ public class Livro {
 	}
 
 	// Getters e Setters
-	public void SetAno() {
-	}
-	
 	public int GetAno() {
-		
+		return ano;
+	}
+
+	public void SetAno(int ano) {
+		this.ano = ano;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public void setAno(int ano) {
+		this.ano = ano;
 	}
 
 	public void exibirInformacao() {
-		System.out.println("Título: " + titulo + "  Autor: " + autor + " Ano de publicação: " + ano);
+		System.out.println("Título: " + titulo + " Autor: " + autor + " Ano de publicação: " + ano);
 	}
 }
