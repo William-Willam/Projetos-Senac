@@ -149,16 +149,17 @@ public class NotaFiscalView extends JFrame {
             g2d.drawString("-------------------------------------", 0, y += 15);
 
             g2d.setFont(fonteNegrito);
-            g2d.drawString("PRODUTO                QTD      SUBTOTAL", 0, y += 15);
+            g2d.drawString("PRODUTO          QTD   VL.UNIT.  SUBTOTAL", 0, y += 15);
             g2d.setFont(fonteNormal);
             for (ItemPedido item : pedido.getItens()) {
                 String nomeProduto = item.getProduto().getNome();
-                if (nomeProduto.length() > 20) {
-                    nomeProduto = nomeProduto.substring(0, 17) + "...";
+                if (nomeProduto.length() > 15) {
+                    nomeProduto = nomeProduto.substring(0, 15);
                 }
-                String linha = String.format("%-20s %3d    %8s",
+                String linha = String.format("%-15s %3d %9s %9s",
                         nomeProduto,
                         item.getQuantidade(),
+                        currency.format(item.getPrecoUnitario()),
                         currency.format(item.getSubtotal()));
                 g2d.drawString(linha, 0, y += 15);
             }
