@@ -1,0 +1,90 @@
+/* estilo.css */
+
+.fundo {
+    -fx-background-color: #f0f4f8; /* Azul claro e suave */
+}
+
+.titulo {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334e68; /* Azul escuro */
+    -fx-alignment: center;
+}
+
+.form-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e0e6ed;
+    -fx-border-radius: 10px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0, 0, 5);
+}
+
+.form-campos {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+.campo {
+    -fx-background-color: #f7f9fc;
+    -fx-background-radius: 5px;
+    -fx-border-color: #c9d6e0;
+    -fx-border-radius: 5px;
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #99aab5;
+}
+
+.campo:focused {
+    -fx-border-color: #4a76a8;
+}
+
+.botao {
+    -fx-background-color: #4a76a8; /* Azul primário */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-pref-height: 35px;
+    -fx-cursor: hand;
+}
+
+.botao:hover {
+    -fx-background-color: #5c87b8; /* Azul mais claro ao passar o mouse */
+}
+
+.botao:pressed {
+    -fx-background-color: #3b5a7a; /* Azul mais escuro ao clicar */
+}
+
+.botao:disabled {
+    -fx-background-color: #c9d6e0;
+    -fx-text-fill: #8899a6;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #c9d6e0;
+    -fx-border-radius: 5px;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #f7f9fc;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f7f9fc;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #667e9c;
+}
+
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d1e2f3; /* Cor de seleção */
+}
