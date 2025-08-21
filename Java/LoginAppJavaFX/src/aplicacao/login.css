@@ -1,0 +1,30 @@
+.root {
+    -fx-background-color: #f4f4f4;
+}
+
+.titulo {
+    -fx-font-size: 24px;
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+.campo {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #ccc;
+    -fx-padding: 5 10;
+}
+
+.botao {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 250px;
+    -fx-background-radius: 5;
+}
+
+.botao:hover {
+    -fx-background-color: #45a049;
+}
